@@ -1,0 +1,34 @@
+----------    Welcome to the course    ----------
+
+We will analyze each of the operators and clauses that LINQ has for manipulating collections.
+
+LINQ is one of the most important libraries in .NET.
+
+LINQ makes it easy to manipulate data in different collections by minimizing the amount of code to perform a data transformation, filter the data in a collection, or compare the information contained in two collections.
+
+With LINQ we can develop better code and follow the best practices that exist in .NET.
+
+LINQ is essential for making Queries and developing Back End with Entity Framework.
+
+Entity Framework allows us through classes to connect to a Database and manipulate Collections.
+
+With LINQ we can easily perform queries and transformations on the data that will ultimately affect the database.
+
+LINQ is also compatible with other programming languages.
+
+
+
+
+
+
+
+
+
+----------    Pre requirements    ----------
+
+- Knowledge in c#
+- Knowledge in .NET
+- .NET SDK 6 or higher.
+- Visual Studio Code
+
+
