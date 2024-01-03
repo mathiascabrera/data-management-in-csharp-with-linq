@@ -32,3 +32,59 @@ LINQ is also compatible with other programming languages.
 - Visual Studio Code
 
 
+
+
+
+
+
+
+
+----------    What´s LINQ?    ----------
+
+Surge en el 2007.
+
+Language-Integrated Query (LINQ). It is a language that is integrated into C# and that allows us to make queries about collections.
+
+LINQ has two ways to be implemented: "Query Expression" and "Extension Methods".
+
+The "Extension Method" is the standard of LINQ usage until now. They are methods that appear within a collection and that allow us to perform filters and different transformations.
+
+"Query Expression" allows us to write queries very similar to SQL queries but using C# syntax.
+
+The namespace to use is "System.Linq". This namespace comes by default in the latest versions of .NET, for example 5 and 6.
+
+
+.NET Framework is the legacy version of .NET.
+
+
+
+
+ What´s not LINQ?
+ 
+- It is not a programming language. It is only based on a programming language and extends the syntax of C#.
+
+- Not a SQL component.
+
+- It is not a database component. It just brings in a collection from a database and reads or transforms it. We don't need to connect to a database to use LINQ, we simply need a collection of data.
+
+- It is not a third-party bookstore. LINQ, as it belongs to .NET, is also OpenSource.
+
+LINQ is built into .NET. Therefore, LINQ supports all .NET-compatible languages, such as C#, Visual Basic, F#, Visual C++, etc.
+
+
+LINQ example:
+
+First way (Query Expression):
+var unTomate = from t in ArraydeStrings
+				where t == "Tomate"
+					select t;
+
+Second way (Extension Method):					
+var unTomate = ArraydeStrings.Where(t=> t == "Tomate");
+
+
+Other sources:
+https://www.syncfusion.com/succinctly-free-ebooks/linq
+https://learn.microsoft.com/en-us/dotnet/csharp/linq/
+https://linqexamples.com/intro/
+https://dotnettutorials.net/lesson/introduction-to-linq/
