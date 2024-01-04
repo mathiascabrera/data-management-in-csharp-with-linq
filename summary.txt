@@ -88,3 +88,49 @@ https://www.syncfusion.com/succinctly-free-ebooks/linq
 https://learn.microsoft.com/en-us/dotnet/csharp/linq/
 https://linqexamples.com/intro/
 https://dotnettutorials.net/lesson/introduction-to-linq/
+
+
+
+
+
+
+
+
+
+----------    Declarative programming vs. imperative    ----------
+
+They are two widely used programming styles.
+
+Modern frameworks and libraries are based on declarative programming to minimize lines of code.
+
+LINQ supports declarative programming. This simplifies our code for handling collections.
+
+
+COMPARISON
+
+Declarative programming:
+- Programming paradigm.
+- Instructions where I specify what I want and not how I want it. We do not specify each step.
+- Contraposition to imperative programming.
+- Reliable and simple.
+
+
+Imperative programming:
+- Programming paradigm.
+- Step-by-step instruction sequence.
+- Contraposition to declarative programming.
+- More extensive but easy to interpret code.
+
+Both are programming paradigms, they are programming styles adopted by different libraries and frameworks.
+They help the programmer when programming and specifying the programming style that should be followed to have best practices.
+
+Declarative programming guides us through instructions.
+We must specify what we want to do and not how we want it. It basically gives us the mechanisms through functions that are already established, so that we can define what we want to do. This could be creating an API, reading a database record, filtering a collection, or performing a query, among other actions, using a keyword, configuration file, or function. We are not going to specify each step in the code.
+
+In imperative programming we do have to specify step by step the entire series of instructions that we want to execute to achieve a certain purpose.
+
+Imperative programming is the classic way of programming in C#.
+
+
+Other source :
+https://learn.microsoft.com/es-es/dotnet/standard/linq/functional-vs-imperative-programming
