@@ -134,3 +134,60 @@ Imperative programming is the classic way of programming in C#.
 
 Other source :
 https://learn.microsoft.com/es-es/dotnet/standard/linq/functional-vs-imperative-programming
+
+
+
+
+
+
+
+
+
+----------    Using LINQ for the first time    ----------
+
+Let's use replit:
+
+https://replit.com/languages/csharp
+
+To use LINQ we must import its library: using System.Linq;
+
+We create a string Array.
+
+With "StartWith("Mango")" we ask if any element starts with "Mango".
+
+The LINQ "Where" function needs a condition that returns true or false, and depending on this it will know whether or not to filter the elements within the collection.
+
+The one that returns true or false is the "StartWith()" function. Every time "StartWith()" returns true, "Where" will create a new collection and finally return a collection with all the elements that meet the condition.
+
+Normally LINQ instructions return an "IEnumerable".
+
+ 
+ 
+ 
+ 
+using System;
+using System.Linq;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        var frutas = new string[] { "Manzana", "Pera", "Naranja", "Mango", "Mango de azucar", "Mango Tomy" };
+
+        var MangoList = frutas.Where(p => p.StartsWith("Mango")).ToList();
+
+        MangoList.ForEach(p => Console.WriteLine(p));
+
+        Console.WriteLine("Fin");
+    }
+}
+
+
+
+
+
+In this way we have used declarative programming. If we had used imperative programming we would have more lines of code.
+
+
+In the next class we will work with a more complex project that will allow us to use several LINQ functions.
+To do this we will use a Json collection that has some books loaded.
