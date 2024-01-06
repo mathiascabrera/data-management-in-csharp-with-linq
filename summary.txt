@@ -149,6 +149,8 @@ Let's use replit:
 
 https://replit.com/languages/csharp
 
+https://dotnetfiddle.net/
+
 To use LINQ we must import its library: using System.Linq;
 
 We create a string Array.
@@ -191,3 +193,73 @@ In this way we have used declarative programming. If we had used imperative prog
 
 In the next class we will work with a more complex project that will allow us to use several LINQ functions.
 To do this we will use a Json collection that has some books loaded.
+
+
+
+
+
+
+
+
+
+----------    Creating the base project    ----------
+
+We will configure a .NET project using a Json file that contains a collection of books that will allow us to use different functions that the LINQ library has.
+
+We must have the .NET SDK installed.
+
+To create this project we open the Console and go to our repository folder. We run "dotnet new console" to create a new console project. We then run "dot net run" to verify that the code is running correctly.
+
+Finally we execute "code ." so that it opens the entire project folder in VSCode.
+
+In the file with the ".csproj" extension we can see the configurations or characteristics of the project:
+
+
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
+
+The "<OutputType>Exe</OutputType>" indicates that it is an executable since it is a console project.
+
+The "<TargetFramework>net7.0</TargetFramework>" tells us the version of the Framework.
+
+"<ImplicitUsings>enable</ImplicitUsings>" indicates that we will not need to add "using LINQ" to use the library. We saw this in the previous course Good Practices in C#.
+
+
+Now we add the Json file containing the book collection.
+
+Json structure :
+
+{
+      "title": "Unlocking Android",
+      "pageCount": 416,
+      "publishedDate": "2009-04-01",
+      "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ableson.jpg",
+      "shortDescription": "Unlocking Android: A Developer's Guide provides concise, hands-on instruction for the Android operating system and development tools. This book teaches important architectural concepts in a straightforward writing style and builds on this with practical and useful examples throughout.",
+      "status": "PUBLISH",
+      "authors": ["W. Frank Ableson", "Charlie Collins", "Robi Sen"],
+      "categories": ["Open Source", "Mobile"]
+}
+    
+The "thumbnailUrl" is the image of the book.
+
+Once the Json is added to our workspace in VSCode, we go back to the "Project.csproj" configuration file to add the Json as part of the project resources.
+
+To add it we must write the following lines of code:
+
+<ItemGroup>
+    <Content Include="books.json"/>
+</ItemGroup>
+
+
+Other sources:
+
+https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-sln
+https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp
