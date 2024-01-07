@@ -263,3 +263,19 @@ Other sources:
 
 https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-sln
 https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp
+
+
+
+
+
+
+
+
+
+----------    Setting up classes    ----------
+
+We create classes to read the Json file.
+
+In the “Book.cs” we add each of the Json properties.
+
+Queries are saved in "LinqQueries.cs"
