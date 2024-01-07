@@ -17,6 +17,8 @@ With LINQ we can easily perform queries and transformations on the data that wil
 LINQ is also compatible with other programming languages.
 
 
+-------------------------------------------------
+
 
 
 
@@ -31,6 +33,8 @@ LINQ is also compatible with other programming languages.
 - .NET SDK 6 or higher.
 - Visual Studio Code
 
+
+--------------------------------------------
 
 
 
@@ -90,6 +94,8 @@ https://linqexamples.com/intro/
 https://dotnettutorials.net/lesson/introduction-to-linq/
 
 
+----------------------------------------
+
 
 
 
@@ -135,6 +141,8 @@ Imperative programming is the classic way of programming in C#.
 Other source :
 https://learn.microsoft.com/es-es/dotnet/standard/linq/functional-vs-imperative-programming
 
+
+------------------------------------------------------------------
 
 
 
@@ -194,6 +202,8 @@ In this way we have used declarative programming. If we had used imperative prog
 In the next class we will work with a more complex project that will allow us to use several LINQ functions.
 To do this we will use a Json collection that has some books loaded.
 
+
+---------------------------------------------------------
 
 
 
@@ -265,6 +275,8 @@ https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-sln
 https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp
 
 
+-----------------------------------------------------
+
 
 
 
@@ -278,4 +290,72 @@ We create classes to read the Json file.
 
 In the “Book.cs” we add each of the Json properties.
 
-Queries are saved in "LinqQueries.cs"
+Queries are saved in "LinqQueries.cs".
+
+
+----------------------------------------------
+
+
+
+
+
+
+
+
+----------    Importing data    ----------
+
+Let's transform the Json data into a Collection to start working with LINQ.
+
+
+
+The "StreamReader" class allows us to read a file.
+
+StreamReader reader = new StreamReader("The path where the file is located should go here.")
+
+Since we have the file in the root of our project, we simply write the file name:
+
+StreamReader reader = new StreamReader("books.json")
+
+
+In the following code snippet we save the reading of the json file in a variable.
+
+string json = reader.ReadToEnd();
+
+
+Then we transform that file into a collection:
+
+this.LibrosCollection = System.Text.Json.JsonSerializer.Deserialize<List<Book>>(json, new System.Text.Json.JsonSerializerOptions(){PropertyNameCaseInsensitive = true})!;
+
+With "Deserialize<List<Book>>(json)" we are transforming the content of the Json into List<Book>.
+
+
+On the other hand with "new System.Text.Json.JsonSerializerOptions(){PropertyNameCaseInsensitive = true})!" We are setting the Json properties to be in lower case, more precisely in "camelCase", while the properties of the "Book" class are in upper case.
+With the "!" We establish that the data is "non-nullable."
+
+
+with the following method:
+
+public IEnumerable<Book> TodaLaColeccion()
+{
+        return LibrosCollection;
+}
+
+We simply return an "IEnumerable<Book>" since all we want to do is print the list elements.
+
+
+In Program.cs :
+
+Console.WriteLine("{0, -60} {1, 15} {2, 15}\n","Titulo","N. Paginas","Fecha publicacion");
+
+This is a special functionality of "WriteLine" where using the "{}" we establish in which columns the data will be printed. It is used to control the output. It is known as a "composite format string." The numbers between {} are indexes that correspond to the arguments to be supplied after the format string. The number after the comma establishes the minimum width of the column and in turn if they are negative the texts will be aligned to the left, while if they are positive they will be aligned to the right.
+In this example we are establishing three columns.
+
+
+Inside the foreach :
+
+Console.WriteLine("{0, -60} {1, 15} {2, 15}", item.Title, item.PageCount, item.PublishedDate.ToShortDateString());
+
+With "PublishedDate.ToShortDateString()" print only the date. If we just use "PublishedDate()" in addition to printing the date, it will print the time.
+
+
+--------------------------------------------

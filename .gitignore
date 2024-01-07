@@ -443,3 +443,6 @@ $RECYCLE.BIN/
 
 # Pdf files
 *.pdf
+
+# Directories
+capturas/
