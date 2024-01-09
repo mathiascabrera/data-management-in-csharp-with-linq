@@ -1,4 +1,3 @@
-using System.Text.Json;
 public class LinqQueries
 {
     private List<Book> LibrosCollection = new List<Book>();
@@ -7,17 +6,27 @@ public class LinqQueries
         using(StreamReader reader = new StreamReader("books.json"))
         {
             string json = reader.ReadToEnd();
-            this.LibrosCollection = JsonSerializer.Deserialize<List<Book>>(json, new System.Text.Json.JsonSerializerOptions(){PropertyNameCaseInsensitive = true})!;
+            this.LibrosCollection = System.Text.Json.JsonSerializer.Deserialize<List<Book>>(json, new System.Text.Json.JsonSerializerOptions(){PropertyNameCaseInsensitive = true})!;
         }
     }
-    public IEnumerable<Book> GetBooks() => this.LibrosCollection;
-
-    public void ImprimirBooks()
+    public IEnumerable<Book> TodaLaColeccion()
     {
-        Console.WriteLine("{0, -60} {1, 15} {2, 15}\n", "Titulo", "Paginas", "Publicación");
-        this.LibrosCollection.ForEach(x => Console.WriteLine("{0, -60} {1, 15} {2, 15}\n",
-            x.Title,
-            x.PageCount,
-            x.PublishedDate.ToString("yyyy-MM-dd")));
+        return LibrosCollection;
+    }
+    public IEnumerable<Book> LibrosDespuesdel2000()
+    {
+        //Extension Method
+        //return LibrosCollection.Where(p=> p.PublishedDate.Year > 2000);
+
+        /* Query Expresion */
+        return from l in LibrosCollection where l.PublishedDate.Year > 2000 select l;
+    }
+    public IEnumerable<Book> LibrosConMasde250PagConPalabrasInAction()
+    {
+        //Extension Method
+        //return LibrosCollection.Where(p=> p.PageCount > 250 && (p.Title ?? string.Empty).Contains("in Action"));
+
+        /* Query Expresion */
+        return from l in LibrosCollection where l.PageCount > 250 && (l.Title ?? String.Empty).Contains("in Action") select l;
     }
 }

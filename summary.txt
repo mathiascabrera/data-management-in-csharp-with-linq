@@ -359,3 +359,60 @@ With "PublishedDate.ToShortDateString()" print only the date. If we just use "Pu
 
 
 --------------------------------------------
+
+
+
+
+
+
+
+
+----------    Using the Where Operator    ----------
+
+From this class we will begin to use LINQ operators.
+
+Operators can be grouped into three categories:
+
+- Basic Operators. Those that filter or make any specific modification to the collection.
+
+- Aggregation Operators. They perform operations on all the data in the collection.
+
+- Group of Operators. They group the data according to different criteria.
+
+
+We start with the Basic Operators:
+
+Where operator = Receives one or more conditions by which you can filter the collection. It works exactly the same as in SQL.
+
+
+
+Where Operator Challenge 1: Using the Where operator returns books that were published after the year 2000.
+
+First we will use the "Extension Method":
+
+return LibrosCollection.Where(p=> p.PublishedDate.Year > 2000);
+
+
+Then we perform the challenge with the "Query Expression":
+
+return from l in LibrosCollection where l.PublishedDate.Year > 2000 select l;
+
+
+With "select l" we are selecting each of the column elements or properties of the Book class, in this case, that we want to select.
+We are selecting the entire "Book" object.
+
+
+2 Operator Challenge: Using the "Where" operator returns books that are longer than 250 pages and whose title contains the words "in action."
+
+
+That the “Book” properties are “nullable” will give us warnings in the queries, so this is solved in this way:
+
+ "l.Title ?? String.Empty" 
+
+
+
+
+https://learn.microsoft.com/es-mx/dotnet/csharp/linq/
+
+
+----------------------------------------------------
