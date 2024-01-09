@@ -1,3 +1,4 @@
+using System.Text.Json;
 public class LinqQueries
 {
     private List<Book> LibrosCollection = new List<Book>();
@@ -6,11 +7,17 @@ public class LinqQueries
         using(StreamReader reader = new StreamReader("books.json"))
         {
             string json = reader.ReadToEnd();
-            this.LibrosCollection = System.Text.Json.JsonSerializer.Deserialize<List<Book>>(json, new System.Text.Json.JsonSerializerOptions(){PropertyNameCaseInsensitive = true})!;
+            this.LibrosCollection = JsonSerializer.Deserialize<List<Book>>(json, new System.Text.Json.JsonSerializerOptions(){PropertyNameCaseInsensitive = true})!;
         }
     }
-    public IEnumerable<Book> TodaLaColeccion()
+    public IEnumerable<Book> GetBooks() => this.LibrosCollection;
+
+    public void ImprimirBooks()
     {
-        return LibrosCollection;
+        Console.WriteLine("{0, -60} {1, 15} {2, 15}\n", "Titulo", "Paginas", "Publicación");
+        this.LibrosCollection.ForEach(x => Console.WriteLine("{0, -60} {1, 15} {2, 15}\n",
+            x.Title,
+            x.PageCount,
+            x.PublishedDate.ToString("yyyy-MM-dd")));
     }
 }
