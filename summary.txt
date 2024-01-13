@@ -514,3 +514,29 @@ class Program
 
 
 ----------------------------------------------------
+
+
+
+
+
+
+
+
+----------    All and Any Operators    ----------
+
+The "All" operator checks that the conditions are met on all elements in the collection.
+
+The "Any" operator verifies that one or more conditions are met on at least one element in the collection.
+
+Both return a boolean value that reports whether the conditions were met.
+
+
+All Operator :
+Using the "All" operator verify that all elements in the collection have a value in the "Status" field.
+
+
+Any Operator :
+Using the "Any" operator, check if any of the books were published in 2005.
+
+
+-------------------------------------------------------------------

@@ -29,4 +29,12 @@ public class LinqQueries
         /* Query Expresion */
         return from l in LibrosCollection where l.PageCount > 250 && (l.Title ?? String.Empty).Contains("in Action") select l;
     }
+    public bool TodosLosLibrosTienenStatus()
+    {
+        return LibrosCollection.All(p=> p.Status!= string.Empty);
+    }
+    public bool LibroPublicadoEn2005()
+    {
+        return LibrosCollection.Any(p=> p.PublishedDate.Year == 2005);
+    }
 }
