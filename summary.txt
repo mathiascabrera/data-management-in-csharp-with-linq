@@ -416,3 +416,101 @@ https://learn.microsoft.com/es-mx/dotnet/csharp/linq/
 
 
 ----------------------------------------------------
+
+
+
+
+
+
+
+
+----------    Exercise to apply the "Where" operator.    ----------
+
+Test your new knowledge with this exercise!
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+
+        List<Animal> animales = new List<Animal>();
+        animales.Add(new Animal() { Nombre = "Hormiga", Color = "Rojo" });
+        animales.Add(new Animal() { Nombre = "Lobo", Color = "Gris" });
+        animales.Add(new Animal() { Nombre = "Elefante", Color = "Gris" });
+        animales.Add(new Animal() { Nombre = "Pantegra", Color = "Negro" });
+        animales.Add(new Animal() { Nombre = "Gato", Color = "Negro" });
+        animales.Add(new Animal() { Nombre = "Iguana", Color = "Verde" });
+        animales.Add(new Animal() { Nombre = "Sapo", Color = "Verde" });
+        animales.Add(new Animal() { Nombre = "Camaleon", Color = "Verde" });
+        animales.Add(new Animal() { Nombre = "Gallina", Color = "Blanco" });
+
+        // Escribe tu código aquí
+        // filtra todos los animales que sean de color verde que su nombre inicie con una vocal
+      
+        string[] vocales = { "a", "e", "i", "o", "u" };
+
+        foreach (var p in animales.Where(p => p.Color.Equals("verde", StringComparison.OrdinalIgnoreCase) && vocales.Any(v => p.Nombre.StartsWith(v, StringComparison.OrdinalIgnoreCase))))
+        {
+
+            Console.WriteLine(p.Nombre);
+
+        }
+
+        /* var searchAnimal = (from animal in animales
+          where animal.Color == "Verde" && (animal.Nombre.StartsWith("A") || animal.Nombre.StartsWith("E") || animal.Nombre.StartsWith("I") || animal.Nombre.StartsWith("O") || animal.Nombre.StartsWith("U"))
+            select animal);
+      
+        List<Animal> result = searchAnimal.ToList();
+
+        if(result.Count > 0)
+      {
+        Console.WriteLine("Los animales verdes que empiezan con vocal son: ");
+        foreach(var animal in result)
+        {
+          Console.WriteLine(animal.Nombre);
+        }
+      } */
+
+        /* IEnumerable<Animal> greenAnimalsWithVowelNameStart = animales.Where(animal => animal.Color == "Verde" && "AEIOUaeiou".Contains(animal.Nombre[0])).AsEnumerable();
+
+        if (greenAnimalsWithVowelNameStart.Any())
+            foreach (var animal in greenAnimalsWithVowelNameStart)
+                Console.WriteLine($"Nombre: {animal.Nombre}, Color: {animal.Color}"); */
+
+        /* var animales1 = (from animal in animales 
+                    where animal.Color == "Verde" && "AEIOUaeiou".Contains(animal.Nombre[0])
+                    select animal).ToList();
+
+        foreach (var animal in animales1)
+        {
+            Console.WriteLine($"Nombre: {animal.Nombre}, Color: {animal.Color}");
+        } */
+
+        /* List<char> vocales = new List<char>() { 'a', 'e', 'i', 'o', 'u' };
+
+        List<Animal> result = animales.Where(x => x.Color.ToLower().Equals("verde") && vocales.Contains(x.Nombre.ToLower()[0])).ToList();
+
+        if (result.Any())
+          result.ForEach(x => Console.WriteLine(x.Nombre));
+
+        foreach(var animal in result){
+          Console.WriteLine(animal.Nombre);
+        } */
+
+    }
+    public class Animal
+    {
+        public string Nombre { get; set; }
+        public string Color { get; set; }
+    }
+}
+
+//https://replit.com/@mathiasdesign1/LinqWhere#main.cs
+
+
+----------------------------------------------------
