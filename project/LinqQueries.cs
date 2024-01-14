@@ -37,4 +37,9 @@ public class LinqQueries
     {
         return LibrosCollection.Any(p=> p.PublishedDate.Year == 2005);
     }
+    public IEnumerable<Book> LibrosdePython()
+    {
+        //El "Contains" retorna un booleano, si es verdadero, además de retornar un true va a retornar el elmento en cuestión mediante el "where".
+        return LibrosCollection.Where(p=> p.Categories.Contains("Python"));
+    }
 }

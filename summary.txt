@@ -540,3 +540,24 @@ Using the "Any" operator, check if any of the books were published in 2005.
 
 
 -------------------------------------------------------------------
+
+
+
+
+
+
+
+
+----------    Contains Operator    ----------
+
+It informs us about the existence of an element in the collection.
+
+It can be used for complex or primitive types.
+
+
+Operator Contains :
+
+Using the "Contains" operator, you return the elements that belong to the Python category.
+
+
+---------------------------------------------
