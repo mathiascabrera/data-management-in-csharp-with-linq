@@ -561,3 +561,25 @@ Using the "Contains" operator, you return the elements that belong to the Python
 
 
 ---------------------------------------------
+
+
+
+
+
+
+
+
+----------    "OrderBy" and "OrderByDescending" operators    ----------
+
+These operators allow us to sort the collection.
+
+"Order By" sorts in ascending order, while "OrderByDescending" sorts in descending order.
+
+"OrderBy" and "OrderByDescending" operator :
+
+1. Returns all elements of the Java category ordered by name using "OrderBy".
+
+2. Returns all books that have more than 450 pages, sorted by number of pages in descending order using "OrderByDescending".
+
+
+------------------------------------------------------------------

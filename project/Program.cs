@@ -1,6 +1,10 @@
 ﻿LinqQueries queries = new LinqQueries();
 
-ImprimirValores(queries.LibrosdePython());
+Console.WriteLine("Reto 1 OrderBy: ");
+ImprimirValores(queries.LibrosdeJavaPorNombreAscendente());
+
+Console.WriteLine("\nReto 2 OrderByDescending: ");
+ImprimirValores(queries.LibrosMayorA450pagOrdenadosDesc());
 
 void ImprimirValores(IEnumerable<Book> listadelibros)
 {

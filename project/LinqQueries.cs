@@ -42,4 +42,12 @@ public class LinqQueries
         //El "Contains" retorna un booleano, si es verdadero, además de retornar un true va a retornar el elmento en cuestión mediante el "where".
         return LibrosCollection.Where(p=> p.Categories.Contains("Python"));
     }
+    public IEnumerable<Book> LibrosdeJavaPorNombreAscendente()
+    {
+        return LibrosCollection.Where(p=> p.Categories.Contains("Java")).OrderBy(p=> p.Title);
+    }
+    public IEnumerable<Book> LibrosMayorA450pagOrdenadosDesc()
+    {
+        return LibrosCollection.Where(p=> p.PageCount > 450).OrderByDescending(p=> p.PageCount);
+    }
 }
