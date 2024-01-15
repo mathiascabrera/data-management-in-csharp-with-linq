@@ -581,5 +581,58 @@ These operators allow us to sort the collection.
 
 2. Returns all books that have more than 450 pages, sorted by number of pages in descending order using "OrderByDescending".
 
+https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/query-expression-syntax-examples-ordering-linq-to-dataset
+
 
 ------------------------------------------------------------------
+
+
+
+
+
+
+
+
+----------    "OrderBy" operator excercise    ----------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+
+        List<Animal> animales = new List<Animal>();
+        animales.Add(new Animal() { Nombre = "Hormiga", Color = "Rojo" });
+        animales.Add(new Animal() { Nombre = "Lobo", Color = "Gris" });
+        animales.Add(new Animal() { Nombre = "Elefante", Color = "Gris" });
+        animales.Add(new Animal() { Nombre = "Pantegra", Color = "Negro" });
+        animales.Add(new Animal() { Nombre = "Gato", Color = "Negro" });
+        animales.Add(new Animal() { Nombre = "Iguana", Color = "Verde" });
+        animales.Add(new Animal() { Nombre = "Sapo", Color = "Verde" });
+        animales.Add(new Animal() { Nombre = "Camaleon", Color = "Verde" });
+        animales.Add(new Animal() { Nombre = "Gallina", Color = "Blanco" });
+		
+	 // Escribe tu código aquí
+      // Retorna los elementos de la colleción animal ordenados por nombre
+
+      /* var animalesOrdenados = animales.OrderBy(x => x.Nombre);
+
+      foreach(var animal in animalesOrdenados){
+        Console.WriteLine(animal.Nombre);
+        } */
+
+      animales.OrderBy(x => x.Nombre).ToList().ForEach(x => Console.WriteLine(x.Nombre));
+      
+      }
+    public class Animal
+    {
+        public string Nombre { get; set; }
+        public string Color { get; set; }
+    }
+}
+
+
+--------------------------------------------------------
