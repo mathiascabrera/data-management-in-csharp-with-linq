@@ -1,10 +1,11 @@
 ﻿LinqQueries queries = new LinqQueries();
 
-Console.WriteLine("Reto 1 OrderBy: ");
-ImprimirValores(queries.LibrosdeJavaPorNombreAscendente());
+Console.WriteLine("Reto Take:\n");
+ImprimirValores(queries.TresPrimerosLibrosJavaOrdenadosPorFecha());
 
-Console.WriteLine("\nReto 2 OrderByDescending: ");
-ImprimirValores(queries.LibrosMayorA450pagOrdenadosDesc());
+Console.WriteLine("\nReto Skip y Take:\n");
+ImprimirValores(queries.TerceryCuartoLibroDeMas400Pag());
+
 
 void ImprimirValores(IEnumerable<Book> listadelibros)
 {

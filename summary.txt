@@ -636,3 +636,44 @@ class Program
 
 
 --------------------------------------------------------
+
+
+
+
+
+
+
+
+----------    "Take" and "Skip" operators    ----------
+
+These operators are useful for selecting a specific number of items in a list.
+
+
+With "Take" we can set the number of elements we want to select from a list after, for example, filtering or sorting.
+
+With "TakeLast" we select the last items in the list. That is, instead of taking from the first elements, take from the last.
+
+"TakeWhile" receives a condition and takes all the elements that meet that condition until it finds an element that does not meet it.
+
+
+With "Skip" we skip a certain number of records and from that number we select the rest of the records that continue in the list.
+
+With "SkipLast" we skip the last records.
+
+"SkipWhile" skips all those records that meet a condition until it finds a record that does not meet it and would stop skipping, returning all the excess records.
+
+
+- Take Operator :
+
+Using the "Take" operator, select the first 3 books with the most recent publication date that are categorized in Java.
+
+We need to return the last 3 published books, we could use "OrderBy" to sort.
+
+- Skip Operator :
+
+Utilizando el operador "Skip" seleccione el tercer y cuarto libro de los que tengan más de 400 páginas.
+
+In this case we do not have to sort the collection, but we must directly filter those books that have more than 400 pages. Then return the third and fourth. To do this we will have to combine “Jump” with “Take”.
+
+
+-------------------------------------------------------

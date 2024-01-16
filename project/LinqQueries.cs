@@ -50,4 +50,24 @@ public class LinqQueries
     {
         return LibrosCollection.Where(p=> p.PageCount > 450).OrderByDescending(p=> p.PageCount);
     }
+    public IEnumerable<Book> TresPrimerosLibrosJavaOrdenadosPorFecha()
+    {
+        return LibrosCollection
+        .Where(p=> p.Categories
+        .Contains("Java"))
+        .OrderByDescending(p=> p.PublishedDate)
+        .Take(3);
+
+        /* return LibrosCollection
+        .Where(p=> p.Categories
+        .Contains("Java"))
+        .OrderBy(p=> p.PublishedDate)
+        .TakeLast(3); */
+    }
+    public IEnumerable<Book> TerceryCuartoLibroDeMas400Pag(){
+        return LibrosCollection
+        .Where(p=> p.PageCount > 400)
+        .Take(4)
+        .Skip(2);
+    }
 }
