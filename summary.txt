@@ -677,3 +677,24 @@ In this case we do not have to sort the collection, but we must directly filter 
 
 
 -------------------------------------------------------
+
+
+
+
+
+
+
+
+----------    Dynamic Data Selection    ----------
+
+We will learn how to use the "Select" operator.
+
+The "Select" operator allows us to specify which columns we need to return.
+
+
+- Select operator:
+
+Using the "Select" operator, select the title and number of pages for the first 3 books in the collection.
+
+
+-------------------------------------------------------
