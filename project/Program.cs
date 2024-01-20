@@ -1,8 +1,8 @@
 ﻿LinqQueries queries = new LinqQueries();
 
-Console.WriteLine("Reto Select:\n");
-ImprimirValores(queries.TresPrimerosLibrosDeLaColeccion());
+Console.WriteLine($"Reto Count.\nCantidad de libros que tienen entre 200 y 500 páginas: {queries.CantidadDeLibrosEntre200y500Pag()}\n\n");
 
+Console.WriteLine($"Reto LongCount.\nCantidad de libros que tienen entre 200 y 500 páginas: {queries.CantidadDeLibrosEntre200y500PagLong()}");
 
 void ImprimirValores(IEnumerable<Book> listadelibros)
 {

@@ -75,4 +75,14 @@ public class LinqQueries
         return LibrosCollection.Take(3)
         .Select(p=> new Book() {Title = p.Title, PageCount = p.PageCount});
     }
+    public int CantidadDeLibrosEntre200y500Pag()
+    {
+        /* return LibrosCollection.Where(p=>p.PageCount>=200 && p.PageCount<=500).Count(); */ /* bad practice */
+        return LibrosCollection.Count(p=>p.PageCount>=200 && p.PageCount<=500);/* good practice */
+    }
+    public long CantidadDeLibrosEntre200y500PagLong()
+    {
+        /* return LibrosCollection.Where(p=>p.PageCount>=200 && p.PageCount<=500).LongCount(); */ /* bad practice */
+        return LibrosCollection.LongCount(p=>p.PageCount>=200 && p.PageCount<=500);/* good practice */
+    }
 }

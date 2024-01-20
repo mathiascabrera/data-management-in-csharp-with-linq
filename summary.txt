@@ -698,3 +698,28 @@ Using the "Select" operator, select the title and number of pages for the first 
 
 
 -------------------------------------------------------
+
+
+
+
+
+
+
+
+----------    LongCount & Count Operators    ----------
+
+These operators are part of LINQ's "Aggregation Operators".
+
+"Aggregation Operators" allow a specific value to be returned.
+
+The "LongCount" and "Count" operators perform the same function. The difference is that "Count" supports 32 bits and "LongCount" supports 64 bits.
+
+Both return the number of elements or records a collection has.
+
+
+"Count operator":
+
+Using the "count" operator, return the number of books that are between 200 and 500 pages.
+
+
+-------------------------------------------------------
