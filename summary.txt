@@ -723,3 +723,23 @@ Using the "count" operator, return the number of books that are between 200 and 
 
 
 -------------------------------------------------------
+
+
+
+
+
+
+
+
+----------    Min & Max Operators    ----------
+
+The "Max" operator allows us to obtain the maximum value. The "Min" operator returns the minimum value.
+
+
+"Min Operator" : 
+Using the "Min" operator, returns the smallest publication date of the books.
+
+"Max Operator" :
+Use the "Max" operator and return the number of pages of the book with the largest number of pages in the collection.
+
+-----------------------------------------------
