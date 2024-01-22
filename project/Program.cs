@@ -1,5 +1,10 @@
 ﻿LinqQueries queries = new LinqQueries();
 
-Console.WriteLine($"Reto Min.\n{queries.FechaDePublicacionMenor()}\n\n");
+var libroMenorPag = queries.LibroConMenorNumeroDePaginas();
 
-Console.WriteLine($"Reto Max.\n{queries.NumeroDePagLibroMayor()} paginas.");
+Console.WriteLine($"Reto MinBy.\n{libroMenorPag.Title} - {libroMenorPag.PageCount}\n\n");
+
+var libroFechaMasReciente = queries.LibroConFechaPublicacionMasReciente();
+
+Console.WriteLine($"Reto MaxBy.\n{libroFechaMasReciente.Title} - {libroFechaMasReciente.PublishedDate.ToShortDateString()}\n\n");
+

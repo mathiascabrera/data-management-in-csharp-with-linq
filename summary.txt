@@ -743,3 +743,27 @@ Using the "Min" operator, returns the smallest publication date of the books.
 Use the "Max" operator and return the number of pages of the book with the largest number of pages in the collection.
 
 -----------------------------------------------
+
+
+
+
+
+
+
+
+----------    MinBy & MaxBy Operators    ----------
+
+Both operators allow us to obtain all the object that meets with some minimum or maximum value.
+
+
+"MinBy Operator":
+
+Returns the book with the fewest number of pages greater than 0.
+
+
+"MaxBy Operator"
+
+Return the book with the most recent publication date.
+
+
+---------------------------------------------------
