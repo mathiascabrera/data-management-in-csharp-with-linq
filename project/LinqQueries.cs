@@ -101,4 +101,22 @@ public class LinqQueries
     {
         return LibrosCollection.MaxBy(p=> p.PublishedDate);
     }
+    public int SumaDeTodasLasPaginasLibrosEntre0y500()
+    {
+        return LibrosCollection.Where(p=> p.PageCount > 0 && p.PageCount <= 500).Sum(p=> p.PageCount);
+    }
+    public string TitulosDeLibrosDespuesDel2015Concatenados()
+    {
+        return LibrosCollection
+        .Where(p=> p.PublishedDate.Year > 2015)
+        .Aggregate("",(TitulosLibros, next) =>
+        {
+            if(TitulosLibros != string.Empty)
+                TitulosLibros += " - " + next.Title;
+            else
+                TitulosLibros += next.Title;
+            return TitulosLibros;
+        });
+
+    }
 }

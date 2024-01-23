@@ -767,3 +767,47 @@ Return the book with the most recent publication date.
 
 
 ---------------------------------------------------
+
+
+
+
+
+
+
+
+----------    Sum & Aggregate Operators    ----------
+
+These operators are useful for performing a sum or calculation on a specific property of the data and returning the total.
+
+
+- Sum Operator :
+
+Returns the sum of the number of pages of all books that have between 0 and 500.
+
+
+- Aggregate Operator :
+
+Returns the title of books that have a publication date after 2015.
+
+
+The “Aggregate” operator concatenates or adds all the values ​​that meet the condition or conditions that we establish and at the end returns all the accumulated values.
+
+
+return LibrosCollection
+        .Where(p=> p.PublishedDate.Year > 2015)
+        .Aggregate("",(TitulosLibros, next) =>
+        {
+            if(TitulosLibros != string.Empty)
+                TitulosLibros += " - " + next.Title;
+            else
+                TitulosLibros += next.Title;
+            return TitulosLibros;
+        });
+
+
+The first value that must be provided is the data type that "Aggregate" will concatenate and ultimately return. In this case it is a "string" so the quotes "".
+The next thing is to establish a variable, "TitulosLibros" where the concatenations will be stored.
+“Next” is the one that will take the values ​​from each of the books.
+
+
+-----------------------------------------------------
