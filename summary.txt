@@ -909,3 +909,20 @@ class Program {
 
 
 ----------------------------------------------------
+
+
+
+
+
+
+
+
+----------    Lookup Clause    ----------
+
+This operator also allows us to make groupings but in the form of a dictionary.
+
+- Lookup Operator :
+Returns a dictionary using "Lookup" that allows you to search for books based on the letter that begins the book title.
+
+
+-----------------------------------------
