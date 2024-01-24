@@ -1,5 +1,3 @@
 ﻿LinqQueries queries = new LinqQueries();
 
-Console.WriteLine($"Reto Sum.\nSuma total de paginas: {queries.SumaDeTodasLasPaginasLibrosEntre0y500()}.\n\n");
-
-Console.WriteLine($"Reto Aggregate.\nTitulos: {queries.TitulosDeLibrosDespuesDel2015Concatenados()}");
+Console.WriteLine($"Reto Average.\nPromedio de caracteres de los titulos: {queries.PromedioCaracteresTitulo()}.\n\n");

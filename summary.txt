@@ -809,5 +809,28 @@ The first value that must be provided is the data type that "Aggregate" will con
 The next thing is to establish a variable, "TitulosLibros" where the concatenations will be stored.
 “Next” is the one that will take the values ​​from each of the books.
 
+Source :
+https://learn.microsoft.com/es-es/dotnet/api/system.linq.enumerable.aggregate?view=net-7.0
+
 
 -----------------------------------------------------
+
+
+
+
+
+
+
+
+----------    Average Operator    ----------
+
+This operator allows us to obtain the average of some numerical property.
+
+- Average Operator :
+Return the average number of characters that the collection titles have.
+
+Others aggregation operators:
+https://learn.microsoft.com/es-es/dotnet/api/system.linq.enumerable?view=net-6.0
+
+
+--------------------------------------------

@@ -117,6 +117,9 @@ public class LinqQueries
                 TitulosLibros += next.Title;
             return TitulosLibros;
         });
-
+    }
+    public double PromedioCaracteresTitulo()
+    {
+        return LibrosCollection.Average(p=> p.Title.Length);
     }
 }
