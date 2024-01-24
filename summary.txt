@@ -834,3 +834,26 @@ https://learn.microsoft.com/es-es/dotnet/api/system.linq.enumerable?view=net-6.0
 
 
 --------------------------------------------
+
+
+
+
+
+
+
+
+----------    GroupBy Clause    ----------
+
+Let's start with the grouping operators.
+
+These operators help us group different data.
+
+"GroupBy" allows us to group data based on the property we specify.
+
+
+- GroupBy Operator :
+
+Return all books published after 2000, grouped by year.
+
+
+------------------------------------------
