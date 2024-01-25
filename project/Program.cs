@@ -1,15 +1,13 @@
 ﻿LinqQueries queries = new LinqQueries();
 
-var diccionarioLookup = queries.DiccinariosDeLibrosPorLetra();
-ImprimirDiccionario(diccionarioLookup, 'S');
+ImprimirValores(queries.LibrosDespuesDel2005ConMasDe500Pags());
 
 
-void ImprimirDiccionario(ILookup<char, Book> ListadeLibros, char letra)
+void ImprimirValores(IEnumerable<Book> listadelibros)
 {
-   Console.WriteLine("{0,-60} {1, 15} {2, 15}\n", "Titulo", "N. Paginas", "Fecha publicacion");
-   foreach(var item in ListadeLibros[letra])
-   {
-         Console.WriteLine("{0,-60} {1, 15} {2, 15}",item.Title,item.PageCount,item.PublishedDate.Date.ToShortDateString()); 
-   }
+    Console.WriteLine("{0,-60} {1, 15} {2, 15}\n", "Titulo", "N. Paginas", "Fecha publicacion");
+    foreach(var item in listadelibros)
+    {
+        Console.WriteLine("{0,-60} {1, 15} {2, 15}", item.Title, item.PageCount, item.PublishedDate.ToShortDateString());
+    }
 }
-

@@ -926,3 +926,22 @@ Returns a dictionary using "Lookup" that allows you to search for books based on
 
 
 -----------------------------------------
+
+
+
+
+
+
+
+
+----------    Join Clause    ----------
+
+This clause allows us to intercept two collections and return the elements found in both collections.
+
+- Join Operator :
+
+Get one collection that has all books over 500 pages and another that contains books published after 2005.
+Using the "Join" clause, return the books that are in both collections.
+
+
+---------------------------------------
